@@ -10,7 +10,7 @@ const MovieList = (props: Props) => {
         return null
     }
 
-    return <div class={"flex"}>
+    return <div class={"flex flex-wrap justify-between"}>
         {props.movies?.map((m) => <MoviePanel movie={m}/>)}
     </div>
 }
