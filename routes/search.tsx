@@ -1,8 +1,7 @@
-import Search from "../components/Search.tsx";
 import Header from "../components/Header.tsx";
 import { Handlers, PageProps } from "$fresh/server.ts";
 import {MovieSearchResult} from "../types.ts";
-import MovieList from "../components/MovieList.tsx";
+import LiveSearch from "../islands/LiveSearch.tsx";
 
 const serverUrl = Deno.env.get('serverUrl')
 
@@ -28,15 +27,14 @@ export const handler: Handlers<{
     },
 };
 //
-export default function Home(props: PageProps<{
+export default function SearchPage(props: PageProps<{
     movies?: MovieSearchResult[];
     query?: string;
 }>) {
   return (
     <div class="p-4 mx-auto max-w-screen-md">
         <Header />
-        <Search query={props.data.query || ''} />
-        {props.data.movies && <MovieList movies={props.data.movies}/>}
+        <LiveSearch query={props.data.query || ''} />
     </div>
   );
 }

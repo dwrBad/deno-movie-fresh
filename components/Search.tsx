@@ -2,10 +2,9 @@ type Props = {
     query: string
 }
 
-
 const Search = (props: Props) => {
     return <div >
-        <h2 class="font-bold bg-slate-800 my-4">Search bar</h2>
+        <h2 class="font-bold bg-slate-800 my-4">Search</h2>
         <form class={`flex w-full gap-2`}>
             <input class="border p-2 w-full" name={'query'} placeholder={"What movie?"} value={props.query}/>
             <button

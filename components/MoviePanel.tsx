@@ -3,9 +3,9 @@ import {MovieSearchResult} from "../types.ts";
 const MovieList = (props: { movie: MovieSearchResult }) => {
     const {movie} = props
 
-    return <div class={"p-3 text-center w-[200px] flex-shrink-0 border border-gray mb-4"}>
+    return <div class={"p-3 text-center w-[200px] flex-shrink-0 border border-gray my-4"}>
         <figure>
-            <img src={movie.Poster} alt={movie.Title}/>
+            {movie.Poster && <img src={movie.Poster} alt={movie.Title}/>}
         </figure>
         <h3>{movie.Title}</h3>
 
